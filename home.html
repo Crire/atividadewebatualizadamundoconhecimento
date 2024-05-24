@@ -28,8 +28,8 @@
 
         <div id="div-cadastro">
             <form action="homeadd.php" method="post">
+                <a id="closeNotas"><i class="fa-solid fa-xmark"></i></a>
                 <h3>Crie sua nota</h3>
-                <input type="text" placeholder="Título" name="titulo-nota" id="titulo-nota" class="input-nota">
                 <input type="text" placeholder="Matéria" id="categoria-nota" name="categoria-nota" class="categoria-nota">
                 <textarea id="-input-conteudo" name="conteudo" cols="50" rows="5" ></textarea>
                 <input type="submit" id="add" name="add"></input>
@@ -71,6 +71,13 @@
                 });
             });
         });
+        function closenotas(){
+            const botaoClose = document.querySelector("#closeNotas");
+            const divCadastro = document.querySelector('#div-cadastro');
+            botaoClose.addEventListener('click', function(){
+            divCadastro.style.display = 'none';
+        })}
+        closenotas();
     </script>
 </body>
 </html>

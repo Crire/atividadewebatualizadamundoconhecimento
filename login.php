@@ -1,4 +1,5 @@
 <?php
+session_start();
 $email = $_POST['loginemail'];
 $senha = $_POST['loginsenha'];
 $entrar = $_POST['entrar'];
@@ -25,6 +26,8 @@ if (isset($entrar)) {
         die();
     } else {
         setcookie("login", $email, time() + (86400 * 30), "/");
+        $_SESSION["email"] = $email;
+        $_SESSION["senha"] = $senha;
         echo "<script>alert('Login realizado com sucesso!'); window.location.href='home.html';</script>";
         exit();
     }

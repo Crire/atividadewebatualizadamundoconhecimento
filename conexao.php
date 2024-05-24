@@ -4,7 +4,7 @@
     $matricula = $_POST['matricula'];
     $senha = $_POST['senha'];
 
-    $conn = new mysqli('localhost', 'root', "", 'atividadeweb');
+    $conn = new mysqli('localhost', 'root', "Eric019283746551413121.", 'atividadeweb');
     if($conn->connect_errno){
         echo "Erro";
     } else{

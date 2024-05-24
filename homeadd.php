@@ -1,14 +1,12 @@
 <?php
-
-
+session_start();
 // Create connection
-$conn = new mysqli('localhost', 'root', "", 'atividadeweb');
+$conn = new mysqli('localhost', 'root', "Eric019283746551413121.", 'atividadeweb');
 
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
 
 $query = "SELECT * FROM Posts";
 $resultado = $conn->query($query);
@@ -38,7 +36,7 @@ if (isset($_POST['add'])) {
     if($categoria != "" && $conteudo != ""){
         $query = "insert into Posts(PosAutor, PosArea, PosTexto) values(?, ?, ?)";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("sss", $titulo, $categoria, $conteudo);
+        $stmt->bind_param("sss",$_SESSION["email"], $categoria, $conteudo);
         $stmt->execute();
         $result = $stmt->get_result();
 

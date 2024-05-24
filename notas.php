@@ -4,7 +4,7 @@ $categoria = $_POST['categoria-nota'];
 $conteudo = $_POST['conteudo'];
 $add = $_POST['add'];
 // Create connection
-$conn = new mysqli('localhost', 'root', "", 'atividadeweb');
+$conn = new mysqli('localhost', 'root', "Eric019283746551413121.", 'atividadeweb');
 if ($conn->connect_error) {
     die("Erro na conexão: " . $conexao->connect_error);
 }
